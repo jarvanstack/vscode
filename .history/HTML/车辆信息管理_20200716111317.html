@@ -1,0 +1,671 @@
+<html><head lang="en">
+    <meta charset="UTF-8">
+    <title>车辆电子牌照信息管理系统</title>
+    <link rel="icon" type="image/x-icon" href="/license_plate/images/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/license_plate/images/logo.png">
+    <link rel="bookmark" type="image/x-icon" href="/license_plate/images/logo.png">
+    <link type="text/css" rel="stylesheet" href="/license_plate/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/license_plate/css/public.css">
+<link href="http://localhost:8084/license_plate/calendar/skin/WdatePicker.css" rel="stylesheet" type="text/css"></head>
+<body>
+<!--头部-->
+    <header class="publicHeader">
+        <h1>车辆电子牌照信息管理系统</h1>
+        <div class="publicHeaderR">
+            <p><span>您的身份:</span><span style="color: #fff21b"> 系统管理员</span></p>
+            <a href="/license_plate/jsp/logout.do">退出</a>
+        </div>
+    </header>
+<!--时间-->
+    <section class="publicTime">
+        <span id="time">Thursday 2020-7-16 11:6:1</span>
+        <a href="#">温馨提示：建议使用最高版本的谷歌或者火狐浏览器！</a>
+    </section>
+ <!--主体内容-->
+ <section class="publicMian ">
+     <div class="left">
+         <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+         <nav>
+             <ul class="list">
+                 <li><a href="/license_plate/jsp/bill.do?method=query">车辆信息管理</a></li>
+              <li><a href="/license_plate/jsp/provider.do?method=query">车主信息管理</a></li>
+              <li><a href="/license_plate/jsp/user.do?method=query">用户信息管理</a></li>
+              <li><a href="/license_plate/jsp/pwdmodify.jsp">密码修改</a></li>
+              <li><a href="/license_plate/jsp/logout.do">车辆轨迹信息</a></li>
+             </ul>
+         </nav>
+     </div>
+     <input type="hidden" id="path" name="path" value="/license_plate">
+     <input type="hidden" id="referer" name="referer" value="http://localhost:8084/license_plate/jsp/frame.jsp">
+
+
+<div class="right">
+       <div class="location">
+           <strong>位置:</strong>
+           <span>车辆信息管理页面</span>
+       </div>
+       <div class="search">
+       <form method="get" action="/license_plate/jsp/bill.do">
+			<input name="method" value="query" class="input-text" type="hidden">
+			<span>车牌号：</span>
+			<input name="queryProductName" type="text" value="">
+			 
+			<span>省/直辖市/自治区：</span>
+			<select name="queryProviderId">
+				
+				   <option value="0">重庆市</option>
+				   
+				   		<option value="1">北京三木堂商贸有限公司</option>
+				   
+				   		<option value="2">石家庄帅益食品贸易有限公司</option>
+				   
+				   		<option value="3">深圳市泰香米业有限公司</option>
+				   
+				   		<option value="4">深圳市喜来客商贸有限公司</option>
+				   
+				   		<option value="5">兴化佳美调味品厂</option>
+				   
+				   		<option value="6">北京纳福尔食用油有限公司</option>
+				   
+				   		<option value="7">北京国粮食用油有限公司</option>
+				   
+				   		<option value="8">慈溪市广和绿色食品厂</option>
+				   
+				   		<option value="9">优百商贸有限公司</option>
+				   
+				   		<option value="10">南京火头军信息技术有限公司</option>
+				   
+				   		<option value="11">广州市白云区美星五金制品厂</option>
+				   
+				   		<option value="12">北京隆盛日化科技</option>
+				   
+				   		<option value="13">山东豪克华光联合发展有限公司</option>
+				   
+				   		<option value="14">无锡喜源坤商行</option>
+				   
+				   		<option value="15">乐摆日用品厂</option>
+				   
+				
+       		</select>
+			 
+			<span>区/县：</span>
+			<select name="queryIsPayment">
+				<option value="0">渝中区</option>
+				<option value="1">已经违章</option>
+				<option value="2">未违章</option>
+       		</select>
+			
+			 <input value="查 询" type="submit" id="searchbutton">
+			 <a href="/license_plate/jsp/billadd.jsp">添加车辆</a>
+		</form>
+       </div>
+       <!--账单表格 样式和供应商公用-->
+      <table class="providerTable" cellpadding="0" cellspacing="0">
+          <tbody><tr class="firstTr">
+              <th width="10%">车牌号</th>
+              <th width="20%">车主姓名</th>
+              <th width="10%">VIN </th>
+              <th width="10%">车型</th>
+              <th width="10%">是否违章</th>
+              <th width="10%">记录时间</th>
+              <th width="30%">操作</th>
+          </tr>
+          
+				<tr>
+					<td>
+					<span>贵A·PXBGZ</span>
+					</td>
+					<td>
+					<span>顾德</span>
+					</td>
+					<td>
+					<span>VNN6715F92432A5F5</span>
+					</td>
+					<td>
+					<span>小型车</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-03-23
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="2" billcc="BILL2016_002"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="2" billcc="BILL2016_002"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="2" billcc="BILL2016_002"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>宁F·ZN9HU</span>
+					</td>
+					<td>
+					<span>尤婷姣</span>
+					</td>
+					<td>
+					<span>VNNAADBH3XJ1DA2B1</span>
+					</td>
+					<td>
+					<span>小型车</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2014-12-14
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="3" billcc="BILL2016_003"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="3" billcc="BILL2016_003"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="3" billcc="BILL2016_003"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>闽S·UJJ8I</span>
+					</td>
+					<td>
+					<span>常致树</span>
+					</td>
+					<td>
+					<span>VNNC5A1C3T8MAFA70</span>
+					</td>
+					<td>
+					<span>小型车</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2013-10-10
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="4" billcc="BILL2016_004"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="4" billcc="BILL2016_004"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="4" billcc="BILL2016_004"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>澳W·FJRP7</span>
+					</td>
+					<td>
+					<span>沈园艺</span>
+					</td>
+					<td>
+					<span>VNN2GFEA0S5M67234</span>
+					</td>
+					<td>
+					<span>小型车</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2014-12-14
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="5" billcc="BILL2016_005"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="5" billcc="BILL2016_005"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="5" billcc="BILL2016_005"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_006</span>
+					</td>
+					<td>
+					<span>美国大杏仁</span>
+					</td>
+					<td>
+					<span>深圳市喜来客商贸有限公司</span>
+					</td>
+					<td>
+					<span>5000.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-04-14
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="6" billcc="BILL2016_006"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="6" billcc="BILL2016_006"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="6" billcc="BILL2016_006"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_007</span>
+					</td>
+					<td>
+					<span>沐浴液、精油</span>
+					</td>
+					<td>
+					<span>无锡喜源坤商行</span>
+					</td>
+					<td>
+					<span>23000.00</span>
+					</td>
+					<td>
+					<span>
+						已经违章
+						
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-07-22
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="7" billcc="BILL2016_007"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="7" billcc="BILL2016_007"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="7" billcc="BILL2016_007"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_008</span>
+					</td>
+					<td>
+					<span>不锈钢盘碗</span>
+					</td>
+					<td>
+					<span>无锡喜源坤商行</span>
+					</td>
+					<td>
+					<span>6000.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-04-14
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="8" billcc="BILL2016_008"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="8" billcc="BILL2016_008"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="8" billcc="BILL2016_008"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_009</span>
+					</td>
+					<td>
+					<span>塑料杯</span>
+					</td>
+					<td>
+					<span>无锡喜源坤商行</span>
+					</td>
+					<td>
+					<span>1750.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-02-04
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="9" billcc="BILL2016_009"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="9" billcc="BILL2016_009"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="9" billcc="BILL2016_009"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_010</span>
+					</td>
+					<td>
+					<span>豆瓣酱</span>
+					</td>
+					<td>
+					<span>慈溪市广和绿色食品厂</span>
+					</td>
+					<td>
+					<span>2000.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2013-10-29
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="10" billcc="BILL2016_010"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="10" billcc="BILL2016_010"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="10" billcc="BILL2016_010"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_011</span>
+					</td>
+					<td>
+					<span>海之蓝</span>
+					</td>
+					<td>
+					<span>北京三木堂商贸有限公司</span>
+					</td>
+					<td>
+					<span>10000.00</span>
+					</td>
+					<td>
+					<span>
+						已经违章
+						
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-04-14
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="11" billcc="BILL2016_011"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="11" billcc="BILL2016_011"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="11" billcc="BILL2016_011"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_012</span>
+					</td>
+					<td>
+					<span>芝华士</span>
+					</td>
+					<td>
+					<span>北京三木堂商贸有限公司</span>
+					</td>
+					<td>
+					<span>6000.00</span>
+					</td>
+					<td>
+					<span>
+						已经违章
+						
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-09-09
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="12" billcc="BILL2016_012"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="12" billcc="BILL2016_012"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="12" billcc="BILL2016_012"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_013</span>
+					</td>
+					<td>
+					<span>长城红葡萄酒</span>
+					</td>
+					<td>
+					<span>北京三木堂商贸有限公司</span>
+					</td>
+					<td>
+					<span>800.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-11-14
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="13" billcc="BILL2016_013"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="13" billcc="BILL2016_013"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="13" billcc="BILL2016_013"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_014</span>
+					</td>
+					<td>
+					<span>泰国香米</span>
+					</td>
+					<td>
+					<span>深圳市泰香米业有限公司</span>
+					</td>
+					<td>
+					<span>5000.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-10-09
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="14" billcc="BILL2016_014"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="14" billcc="BILL2016_014"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="14" billcc="BILL2016_014"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_015</span>
+					</td>
+					<td>
+					<span>东北大米</span>
+					</td>
+					<td>
+					<span>深圳市泰香米业有限公司</span>
+					</td>
+					<td>
+					<span>4000.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-11-14
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="15" billcc="BILL2016_015"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="15" billcc="BILL2016_015"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="15" billcc="BILL2016_015"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_016</span>
+					</td>
+					<td>
+					<span>可口可乐</span>
+					</td>
+					<td>
+					<span>石家庄帅益食品贸易有限公司</span>
+					</td>
+					<td>
+					<span>6000.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2012-03-27
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="16" billcc="BILL2016_016"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="16" billcc="BILL2016_016"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="16" billcc="BILL2016_016"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_017</span>
+					</td>
+					<td>
+					<span>脉动</span>
+					</td>
+					<td>
+					<span>石家庄帅益食品贸易有限公司</span>
+					</td>
+					<td>
+					<span>4500.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2016-05-10
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="17" billcc="BILL2016_017"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="17" billcc="BILL2016_017"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="17" billcc="BILL2016_017"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+					<span>BILL2016_018</span>
+					</td>
+					<td>
+					<span>哇哈哈</span>
+					</td>
+					<td>
+					<span>石家庄帅益食品贸易有限公司</span>
+					</td>
+					<td>
+					<span>4000.00</span>
+					</td>
+					<td>
+					<span>
+						
+						未违章
+					</span>
+					</td>
+					<td>
+					<span>
+					2015-11-24
+					</span>
+					</td>
+					<td>
+					<span><a class="viewBill" href="javascript:;" billid="18" billcc="BILL2016_018"><img src="/license_plate/images/read.png" alt="查看" title="查看"></a></span>
+					<span><a class="modifyBill" href="javascript:;" billid="18" billcc="BILL2016_018"><img src="/license_plate/images/xiugai.png" alt="修改" title="修改"></a></span>
+					<span><a class="deleteBill" href="javascript:;" billid="18" billcc="BILL2016_018"><img src="/license_plate/images/schu.png" alt="删除" title="删除"></a></span>
+					</td>
+				</tr>
+			
+      </tbody></table>
+  </div>
+</section>
+
+<!--点击删除按钮后弹出的页面-->
+<div class="zhezhao"></div>
+<div class="remove" id="removeBi">
+    <div class="removerChid">
+        <h2>提示</h2>
+        <div class="removeMain">
+            <p>你确定要删除该订单吗？</p>
+            <a href="#" id="yes">确定</a>
+            <a href="#" id="no">取消</a>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="footer">
+    <br>
+    <br>
+    Copyright2020  by 重庆邮电大学      All Rights Reserved
+</footer>
+<script type="text/javascript" src="/license_plate/js/time.js"></script>
+<script type="text/javascript" src="/license_plate/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/license_plate/js/common.js"></script>
+<script type="text/javascript" src="/license_plate/calendar/WdatePicker.js"></script>
+
+
+<script type="text/javascript" src="/license_plate/js/billlist.js"></script><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px;"><iframe style="width: 186px; height: 196px;" src="http://localhost:8084/license_plate/calendar/My97DatePicker.htm" frameborder="0" border="0" scrolling="no"></iframe></div></body></html>

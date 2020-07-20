@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML中From表单</title>
+    <style>
+        fieldset
+        {
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h3>表单就是用来用户输入信息的工具</h3>
+    <h3>简单的表单的简介</h3>
+    <h3>input 表单是单身狗</h3>
+    <form action="post">
+        <fieldset>
+            <legend>1.文本域表单（Text Field）用来输入用户和密码</legend>
+            <span>
+                username: <input type="text" name="username">
+            </span>
+            <br>
+            <span>
+                password: <input type="password" name="password">
+            </span>
+        </fieldset>
+    </form>
+    <form action="post">
+        <fieldset>
+            <legend>2.单选按钮（Radio Buttons）</legend>
+            <span>
+                <input type="radio" name="sex" value="男">
+            </span>
+            <br>
+            <span>
+                <input type="radio" name="sex" value="女">
+            </span>
+        </fieldset>
+    </form>
+    <form action="post">
+        <fieldset>
+            <legend>3.复选框（Checkboxes）</legend>
+            <span>
+                <input type="checkbox" name="like_things" value="apple" >
+            </span>
+            <span>
+                <input type="checkbox" name="like_things" value="banana">
+            </span>
+        </fieldset>
+    </form>
+    <form action="post">
+        <fieldset>
+            <legend>4.提交按钮summit</legend>
+            <span>
+                username: <input type="text" name="username">
+            </span>
+            <br>
+            <span>
+                password: <input type="password" name="password">
+            </span>
+            <span>
+                <input type="submit" name="submit">
+            </span>
+        </fieldset>
+    </form>
+</body>
+
+</html>

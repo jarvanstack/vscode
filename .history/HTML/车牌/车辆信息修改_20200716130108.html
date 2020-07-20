@@ -1,0 +1,112 @@
+<html><head lang="en">
+    <meta charset="UTF-8">
+    <title>车辆电子牌照信息管理系统</title>
+    <link rel="icon" type="image/x-icon" href="/license_plate/images/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/license_plate/images/logo.png">
+    <link rel="bookmark" type="image/x-icon" href="/license_plate/images/logo.png">
+    <link type="text/css" rel="stylesheet" href="/license_plate/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/license_plate/css/public.css">
+<link href="http://localhost:8084/license_plate/calendar/skin/WdatePicker.css" rel="stylesheet" type="text/css"></head>
+<body>
+<!--头部-->
+    <header class="publicHeader">
+        <h1>车辆电子牌照信息管理系统</h1>
+        <div class="publicHeaderR">
+            <p><span>您的身份:</span><span style="color: #fff21b"> 系统管理员</span></p>
+            <a href="/license_plate/jsp/logout.do">退出</a>
+        </div>
+    </header>
+<!--时间-->
+    <section class="publicTime">
+        <span id="time">Thursday 2020-7-16 12:58:26</span>
+        <a href="#">温馨提示：建议使用最高版本的谷歌或者火狐浏览器！</a>
+    </section>
+ <!--主体内容-->
+ <section class="publicMian ">
+     <div class="left">
+         <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+         <nav>
+             <ul class="list">
+                 <li><a href="/license_plate/jsp/bill.do?method=query">车辆信息管理</a></li>
+              <li><a href="/license_plate/jsp/provider.do?method=query">车主信息管理</a></li>
+              <li><a href="/license_plate/jsp/user.do?method=query">用户信息管理</a></li>
+              <li><a href="/license_plate/jsp/pwdmodify.jsp">密码修改</a></li>
+              <li><a href="/license_plate/jsp/logout.do">车辆轨迹信息</a></li>
+             </ul>
+         </nav>
+     </div>
+     <input type="hidden" id="path" name="path" value="/license_plate">
+     <input type="hidden" id="referer" name="referer" value="http://localhost:8084/license_plate/jsp/bill.do?method=query">
+
+
+<div class="right">
+        <div class="location">
+            <strong>位置:</strong>
+            <span>车辆信息管理页面 &gt;&gt; 车辆信息添加页面</span>
+        </div>
+        <div class="providerAdd">
+          <form id="billForm" name="billForm" method="post" action="/license_plate/jsp/bill.do">
+				<input type="hidden" name="method" value="modifysave">
+				<input type="hidden" name="id" value="2">
+                <!--div的class 为error是验证错误，ok是验证成功-->
+                <div class="">
+                    <label for="billCode">车牌号：</label>
+                    <input type="text" name="billCode" id="billCode" value="川Q·RPC7K" readonly="readonly"> 
+                </div>
+                <div>
+                    <label for="productName">车主姓名：</label>
+                    <input type="text" name="productName" id="productName" value="平时"> 
+					<font color="red">*</font>
+                </div>
+                <div>
+                    <label for="productUnit">VIN ：</label>
+                    <input type="text" name="productUnit" id="productUnit" value="VNN4G4B55WK4A7764"readonly="readonly">
+					<font color="red">*</font>
+                </div>
+                <div>
+                    <label for="productCount">车型：</label>
+                    <input type="text" name="productCount" id="productCount" value="大型车"> 
+					<font color="red">*</font>
+                </div>
+                <div>
+                    <label for="totalPrice">记录时间：</label>
+                    <input type="text" name="totalPrice" id="totalPrice" value="2020.07.18"> 
+					<font color="red">*</font>
+                </div>
+                <div>
+                    <label for="providerId">地区：</label>
+
+                    <input type="hidden" value="Yes" id="pid">
+					<select name="providerId" id="providerId"><option value="0"></option><option value="1">北京三木堂商贸有限公司</option><option value="2">石家庄帅益食品贸易有限公司</option><option value="3">深圳市泰香米业有限公司</option><option value="4">深圳市喜来客商贸有限公司</option><option value="5">兴化佳美调味品厂</option><option value="6">北京纳福尔食用油有限公司</option><option value="7">北京国粮食用油有限公司</option><option value="8">慈溪市广和绿色食品厂</option><option value="9">优百商贸有限公司</option><option value="10">南京火头军信息技术有限公司</option><option value="11">广州市白云区美星五金制品厂</option><option value="12">北京隆盛日化科技</option><option value="13">山东豪克华光联合发展有限公司</option><option value="14">无锡喜源坤商行</option><option value="15">乐摆日用品厂</option></select>
+					<font color="red">*</font>
+                </div>
+                <div>
+                    <label>是否违章：</label>
+                    
+					
+						<input type="radio" name="isPayment" value="1">已经违章
+						<input type="radio" name="isPayment" value="2" checked="checked">未违章
+					
+                </div>
+                <div class="providerAddBtn">
+                  <input type="button" name="save" id="save" value="添加">
+				  <input type="button" id="back" name="back" value="取消">
+              	</div>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+
+
+<footer class="footer">
+    Copyright2020  by 智行科技      All Rights Reserved
+</footer>
+<script type="text/javascript" src="/license_plate/js/time.js"></script>
+<script type="text/javascript" src="/license_plate/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/license_plate/js/common.js"></script>
+<script type="text/javascript" src="/license_plate/calendar/WdatePicker.js"></script>
+
+
+<script type="text/javascript" src="/license_plate/js/billmodify.js"></script><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px;"><iframe style="width: 186px; height: 195px;" src="http://localhost:8084/license_plate/calendar/My97DatePicker.htm" frameborder="0" border="0" scrolling="no"></iframe></div></body></html>

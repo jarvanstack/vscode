@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript对象函数</title>
+</head>
+<body>
+    <script>
+    function person(name ,age ){
+        this.name = "张三";
+        this.age = 13;
+        this.changeName = changeName;
+        function changeName(name）
+        {
+            this.name = name;
+        }
+    }
+    var zhangsan = new perosn("zhangsan",13);
+    zhangsan.changeName("狗子");
+    document.write(zhangsan);
+    </script>
+</body>
+</html>

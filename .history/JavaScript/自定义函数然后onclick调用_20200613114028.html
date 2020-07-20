@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义函数然后调用</title>
+</head>
+<body>
+    <h3 id="change">按下按钮被改变的标题</h3>
+    <button type="button" onclick="change()">单击按钮改变标题</button>
+    <script>
+        function change()
+        {
+            var x = document.getElementById("change");
+            x.innerHTML = "已经改变";
+        }
+    </script>
+</body>
+</html>

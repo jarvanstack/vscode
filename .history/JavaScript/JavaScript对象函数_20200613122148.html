@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript对象函数</title>
+</head>
+<body>
+    <script>
+    function person(name ,age ){
+        this.name = "张三";
+        this.age = 13;
+        this.changeName = changeName;
+        function changeName(newName)
+        {
+            this.name = newName;
+        }
+    }
+    dog = new person("dog",13);
+    dog.changeName("狗子");
+    document.write(dog.name);
+    function person(firstname,lastname,age,eyecolor){
+    this.firstname=firstname;
+    this.lastname=lastname;
+    this.age=age;
+    this.eyecolor=eyecolor;
+    this.changeName=changeName;
+	function changeName(name){
+		this.lastname=name;
+	}
+}
+myMother=new person("Sally","Rally",48,"green");
+myMother.changeName("Doe");
+document.write(myMother.lastname);
+    </script>
+</body>
+</html>
